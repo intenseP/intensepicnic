@@ -11,5 +11,5 @@ function goToSmashTD(){
   window.open(website + "smashtd%20files/smashtd", '_blank').focus();
 }
 function goTo20LOH(){
-  window.open(website + "20loh%20files/20loh", '_blank').focus();
+  window.open(website + "20LOH%20Files/20LOH", '_blank').focus();
 }
