@@ -1,5 +1,5 @@
 
-var website = "https://intensepicnic.netlify.app/files/"; 
+var website = "https://intensep.github.io/intensepicnic/files/"; 
 
 function goToITC(){
   window.open(website + "into%20the%20catacombs%20files/into%20the%20catacombs", '_blank').focus();
