@@ -1,0 +1,162 @@
+@font-face{
+	font-family: ministro;
+	src: url(fonts/Ministro.ttf);
+}
+
+html{
+	margin: 0px;
+	padding:0px;
+}
+
+body {
+	padding: 0px; 
+	margin: 0px; 
+	background-color: #121B2B;
+	font-family: ministro;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.gridContainer{
+	margin: 0px;
+	padding: 0px;
+	display: grid;
+	grid-template-columns: 0.75fr 2fr 2fr 2fr 0.75fr;
+	grid-template-rows: auto auto auto auto auto;
+	grid-template-areas: 
+	"navbar navbar navbar navbar navbar"
+	"header header header header header"
+	"gameWindow gameWindow gameWindow gameWindow gameWindow"
+	"bottom bottom bottom bottom bottom"
+	"gameDetails gameDetails gameDetails gameDetails gameDetails";
+	
+	text-align: center;
+	row-gap: 0px;
+	align-content:center;
+	justify-content: space-around;
+	
+}
+ 
+.navbar{
+	margin: 0px;
+	grid-area: navbar;
+	height: 83px;
+	position:relative;
+	display:block;
+	
+}
+	
+
+.navbarContent{
+	background-color: #1C2341;
+	position: absolute;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	z-index:2;
+}
+
+.navbar_backing{
+	position: absolute;
+	background-image:linear-gradient(45deg, #03f4fc, #ff00f7);
+	width: 100%;
+	height: calc(100% + 5px);
+	box-shadow: 0px 0px 25px  rgba(0,0,0, 0.9); 
+	z-index: 1;
+}
+
+.navbar ul{
+	list-style-type: none;
+	padding: 0px 0px;
+	margin: 0px;
+}
+
+.navbar li{
+	float: left;
+	display: inline;
+	transition: background-color 0.25s;
+}
+
+.navbar li:hover{
+	background-color: #394F6B;
+	color: red;
+}
+
+.navbar li a{
+	margin: 0px;
+	padding: 18px 30px;
+	text-decoration: none;
+	display: block;
+}
+
+.navbar p{
+	color: white;
+}
+
+.header{
+	padding: 40px;
+	color:white;
+	text-align: center;
+	grid-area: header;
+	background-image:linear-gradient(0deg, #121B2B, #1C2341);
+}
+
+.bottom{
+	grid-area: bottom;
+	text-align: center;
+}
+
+
+.gameWindow{
+	grid-area: gameWindow;
+	background-color: #121B2B;
+}
+	
+#unity-business{
+ width: 100%;
+}
+#unity-container {}
+#unity-container.unity-desktop { width: 100%; }
+#unity-container.unity-mobile { width: 100%; height: 100% }
+#unity-canvas { background: #231F20;  border:solid;}
+.unity-mobile #unity-canvas { width: 100%; height: 100% }
+#unity-loading-bar { position: absolute; left: 50%; top: 68%; transform: translate(-50%, -50%); display: none }
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('TemplateData/progress-bar-empty-dark.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('TemplateData/progress-bar-full-dark.png') no-repeat center }
+#unity-footer { display: inline-block; background-color: #1A1A1A; width: 960px; text-align: center; align-content:center;border:solid; border-top-width: 0px;}
+.unity-mobile #unity-footer { display: none }
+#unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px; background-color: green;}
+#unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('TemplateData/fullscreen-button.png') no-repeat center }
+#unity-warning { position: absolute; width: 900px; left: 50%; top: 48%; transform: translate(-50%, -50%); background: white; padding: 10px; display: none }
+
+.description{
+	color: white;
+	text-align: left;
+	grid-area: gameDetails;
+	height: 400px;
+	
+}
+
+.description p{
+	color: #BBBBBB;
+	font-family: Verdana;
+}
+
+.gameReleasesSearchLinks{
+	transition: 0.5s;
+}
+
+.gameReleasesSearchLinks:hover{
+	font-size: 20px;
+}
+
+.content{
+	margin: 5%;
+	margin-top: 0%;
+	width: 80%;
+	padding: 1% 4%;
+	
+}

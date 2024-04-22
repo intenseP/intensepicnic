@@ -1,0 +1,180 @@
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>20 Levels of Hell</title>
+    <link rel="shortcut icon" href="GameFiles/General/Icons/20LOHIcon.ico">
+    <link rel="stylesheet" href="GameFiles/General/style.css">
+	
+	
+	
+	<style>
+		
+	
+	
+	</style>
+  </head>
+  <body>
+  
+	<script src="script.js"></script>
+  
+	<div class = "gridContainer">
+		<div class="navbar">
+			<div class="navbar_backing">
+				
+			</div>
+			<div class="navbarContent">
+				<ul>
+					<li><a href="index.html"><p>Home</p></a></li>
+					<li><a href="games.html"><p>Games</p></a></li>
+					<li><a href="releases.html"><p>Releases</p></a></li>
+				</ul>
+			</div>
+		</div>
+	
+	
+		<div class = "header">
+			<h1 style = "font-size: 45px;">20 Levels of Hell</h1>
+			<h4 style = "color: #BBBBBB;">Last updated: 28/02/24</h4>
+		</div>
+		
+		<div class = "sideLeft">
+			
+		</div>
+		
+		<div class = "sideRight">
+			
+		</div>
+	  
+		<div class = "gameWindow">
+			<div id ="unity-business">
+				<div id="unity-container" class="unity-desktop">
+				  <canvas id="unity-canvas" width=1000 height=625></canvas>
+				  <div id="unity-warning"> </div>
+				  <div id="unity-footer">
+					<div id="unity-fullscreen-button"></div>
+					<div id="unity-build-title"></div>
+				  </div>
+				  
+				  <div id="unity-loading-bar">
+					<div id="unity-progress-bar-empty">
+					  <div id="unity-progress-bar-full"></div>
+					</div>
+				  </div>
+				  
+				</div>
+				<script>
+				  var container = document.querySelector("#unity-container");
+				  var canvas = document.querySelector("#unity-canvas");
+				  var loadingBar = document.querySelector("#unity-loading-bar");
+				  var progressBarFull = document.querySelector("#unity-progress-bar-full");
+				  var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+				  var warningBanner = document.querySelector("#unity-warning");
+
+				  // Shows a temporary message banner/ribbon for a few seconds, or
+				  // a permanent error message on top of the canvas if type=='error'.
+				  // If type=='warning', a yellow highlight color is used.
+				  // Modify or remove this function to customize the visually presented
+				  // way that non-critical warnings and error messages are presented to the
+				  // user.
+				  function unityShowBanner(msg, type) {
+					function updateBannerVisibility() {
+					  warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+					}
+					var div = document.createElement('div');
+					div.innerHTML = msg + " Whomp Whomp.";
+					warningBanner.appendChild(div);
+					if (type == 'error') div.style = 'background: red; padding: 10px;';
+					else {
+					  if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+					  setTimeout(function() {
+						warningBanner.removeChild(div);
+						updateBannerVisibility();
+					  }, 5000);
+					}
+					updateBannerVisibility();
+				  }
+
+				  var buildUrl = "GameFiles/20LOH/Build";
+				  var loaderUrl = buildUrl + "/20LOH.loader.js";
+				  var config = {
+					dataUrl: buildUrl + "/20LOH.data",
+					frameworkUrl: buildUrl + "/20LOH.framework.js",
+					codeUrl: buildUrl + "/20LOH.wasm",
+					streamingAssetsUrl: "GameFiles/20LOH/StreamingAssets",
+					companyName: "Intense Picnic",
+					productName: "20 Levels of Hell",
+					productVersion: "1.14",
+					showBanner: unityShowBanner,
+				  };
+
+				  // By default Unity keeps WebGL canvas render target size matched with
+				  // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+				  // Set this to false if you want to decouple this synchronization from
+				  // happening inside the engine, and you would instead like to size up
+				  // the canvas DOM size and WebGL render target sizes yourself.
+				  // config.matchWebGLToCanvasSize = false;
+
+				  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+					// Mobile device style: fill the whole browser client area with the game canvas:
+
+					var meta = document.createElement('meta');
+					meta.name = 'viewport';
+					meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+					document.getElementsByTagName('head')[0].appendChild(meta);
+					container.className = "unity-mobile";
+					canvas.className = "unity-mobile";
+
+					// To lower canvas resolution on mobile devices to gain some
+					// performance, uncomment the following line:
+					// config.devicePixelRatio = 1;
+
+					unityShowBanner('WebGL builds are not supported on mobile devices. Whomp Whomp.');
+				  } else {
+					// Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
+					canvas.style.width = "960px";
+					canvas.style.height = "600px";
+				  }
+
+				  loadingBar.style.display = "block";
+
+				  var script = document.createElement("script");
+				  script.src = loaderUrl;
+				  script.onload = () => {
+					createUnityInstance(canvas, config, (progress) => {
+					  progressBarFull.style.width = 100 * progress + "%";
+					}).then((unityInstance) => {
+					  loadingBar.style.display = "none";
+					  fullscreenButton.onclick = () => {
+						unityInstance.SetFullscreen(1);
+					  };
+					}).catch((message) => {
+					  alert(message);
+					});
+				  };
+				  document.body.appendChild(script);
+				</script>
+				
+			</div>
+		</div>
+		</br>
+		<div class = "description">
+			<div class = "content">
+				<h3>Overview</h3>
+				<p>20 Levels of Hell is a simple platformer and the adventures of a black square. Traverse the 25 levels of increasing difficulty, getting new abilties along the way. It may start off easy, but I can assure you, you will <b>NOT</b> be completing it. Level 25 is still not confirmed to be possible.</p>
+				
+				<h3>Controls</h3>
+				<p>By default, moving is controlled by A to move left, D to move right. W is the jump key. R will restart from the last Checkpoint. To slide, hold shift while moving to slide in that direction. To pause, press Space. <b> Default keybinds for each action is displayed when beginning and all settings can be adjusted to your liking in the 'Options' tab.</b></p>
+				
+				<br>
+				
+				<h3>Release Details</h3>
+				<p>View the releases, updates and other movements for 20 Levels of Hell <span class = "gameReleasesSearchLinks" style="z-index: 5; text-decoration:none; color: #BBBBBB; background: -webkit-linear-gradient(0deg, #70FFFD, #FF77F9); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><a onClick = "viewAllReleasesForGame('20 Levels of Hell')"><b>HERE</b></a></span></p>
+			</div>
+		</div>
+	
+	</div>
+	
+  </body>
+</html>

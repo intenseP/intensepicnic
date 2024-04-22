@@ -1,0 +1,213 @@
+<html>
+	<head>
+		<title>Releases</title>
+		<link rel = "stylesheet" href= "style.css">
+	</head>
+	<body onload="searchGamePredetermined()">
+	
+		<script src="script.js"></script>
+		
+		
+		
+	
+		<div class="container">
+		
+			<div class="navbar">
+				<div class="navbar_backing">
+				
+				</div>
+				<div class="navbarContent">
+					<ul>
+						<li><a href="index.html"><p>Home</p></a></li>
+						<li><a href="games.html"><p>Games</p></a></li>
+						<li><a href="releases.html"><p>Releases</p></a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class = "header">
+				<h1 style = "font-size: 80px"><span style="background: -webkit-linear-gradient(0deg, #70FFFD, #FF77F9); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Release Notes</span></h1>
+			</div>
+			
+			<div class = "top_main">
+				<div id="searchContainer">
+					<input type="text" id ="releaseSearch" onkeyup="search('')" placeholder="Search for: game titles, versions..." title="Type: men">
+					<div style = "z-index: 5;" id = "change">
+						
+					</div>
+					<div style = "z-index: 4;" class = "underlineBorder">
+						
+					</div>
+				</div>
+				<p id = "noResultMessage"></p>
+			</div>
+		
+			
+			<div class = "releases">
+				<ul class = "releasesContainer" id = "searchable">
+					
+					<li>
+						<div class = "release">
+							<div class = "newUpdate">
+							
+								<div class = "releasesContentContainer">
+									<div class = "releaseContentHeader">
+										<h3 class = "releaseSearchHeader" style = "color: white;">Into The Catacombs Update v1.10</h3>
+										<p><i>Released: a/a/a</i></p>
+									</div>
+									
+									<div class = "releaseContentNotes">
+										<p>[Releasing Soon for those who want]</p>
+									</div>
+									<div class = "releaseContentFooter">
+										<button type="button" class = "releaseButtons" style = "border-radius:15px; width: 100%;" onClick="viewGamePage('Into the Catacombs')">
+											<p><b>View Game</b></p>
+										</button>
+									</div>
+									
+									<div class = "releaseGameDescription">
+										<img src = "Media/yourNan.png" alt = "">
+									</div>
+								</div>
+							</div>
+							<div class = "newUpdateBacking">
+							
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class = "release">
+							<div class = "newRelease">
+							
+								<div class = "releasesContentContainer">
+									<div class = "releaseContentHeader">
+										<h3 class = "releaseSearchHeader" style = "color: white;">20 Levels of Hell Released v1.0</h3>
+										<p><i>Released: 07/10/23</i></p>
+									</div>
+									
+									<div class = "releaseContentNotes">
+										<p>The platformer, 20 Levels of Hell is released, including 25 levels, several gimmicks and the invigorating adventures of a black cube. Thrilling!</p>
+									</div>
+									
+									<div class = "releaseContentFooter">
+										<button type="button" class = "releaseButtons" style = "border-radius:15px; width: 100%;" onClick="viewGamePage('20LOH')">
+											<p><b>View Game</b></p>
+										</button>
+									</div>
+									
+									<div class = "releaseGameDescription">
+										<img src = "Media/yourNan.png" alt = "">
+									</div>
+								</div>
+							</div>
+							<div class = "newReleaseBacking">
+							
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class = "release">
+							<div class = "newRelease">
+							
+								<div class = "releasesContentContainer">
+									<div class = "releaseContentHeader">
+										<h3 class = "releaseSearchHeader" style = "color: white;">Into the Catacombs Released v1.0</h3>
+										<p><i>Released: 04/05/22</i></p>
+									</div>
+									
+									<div class = "releaseContentNotes">
+										<p>Into the Catacombs is released. A roguelite journey through the Catacombs and Dungeons, striking down all who stand against you, purging the cellars of filthy creatures and unnatural evils.</p>
+									</div>
+									
+									<div class = "releaseContentFooter">
+										<button type="button" class = "releaseButtons" style = "border-radius:15px; width: 100%;" onClick="viewGamePage('Into the Catacombs')">
+											<p><b>View Game</b></p>
+										</button>
+									</div>
+									
+									<div class = "releaseGameDescription">
+										<img src = "Media/yourNan.png" alt = "">
+									</div>
+								</div>
+							</div>
+							<div class = "newReleaseBacking">
+							
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class = "release">
+							<div class = "newRelease">
+							
+								<div class = "releasesContentContainer">
+									<div class = "releaseContentHeader">
+										<h3 class = "releaseSearchHeader" style = "color: white;">Crackhead Released v1.0</h3>
+										<p><i>Released: 13/03/22</i></p>
+									</div>
+									
+									<div class = "releaseContentNotes">
+										<p>Crackhead, a expanded 1-hour project, releases. Dominate all other circles! Consume all who are smaller than you and avoid being eaten.</p>
+									</div>
+									
+									<div class = "releaseContentFooter">
+										<button type="button" class = "releaseButtons" style = "border-radius:15px; width: 100%;" onClick="viewGamePage('Crackhead')">
+											<p><b>View Game</b></p>
+										</button>
+									</div>
+									
+									<div class = "releaseGameDescription">
+										<img src = "Media/yourNan.png" alt = "">
+									</div>
+								</div>
+							</div>
+							<div class = "newReleaseBacking">
+							
+							</div>
+						</div>
+					</li>
+					<!--
+					
+					Patch
+					
+					<li>
+						<div class = "release">
+							<div class = "newPatch">
+							
+								<div class = "releasesContentContainer">
+									<div class = "releaseContentHeader">
+										<h3 class = "releaseSearchHeader" style = "color: white;">Patch v</h3>
+										<p><i>Released: a/a/a</i></p>
+									</div>
+									
+									<div class = "releaseContentNotes">
+										<p>[notes here]</p>
+									</div>
+									
+									<div class = "releaseContentFooter">
+										<button type="button" class = "releaseButtons" style = "border-radius:15px; width: 100%;" onClick="viewReleaseGame()">
+											<p><b>View Game</b></p>
+										</button>
+									</div>
+									
+									<div class = "releaseGameDescription">
+										<img src = "Media/yourNan.png" alt = "Error">
+									</div>
+								</div>
+							</div>
+							<div class = "newPatchBacking">
+							
+							</div>
+						</div>
+					</li>
+					-->
+				</ul>
+			</div>
+
+			
+			<div class = "footer" style = "height: 150px;">
+				<p>NO EARLIER DEVELOPMENT</p>
+			</div>
+		</div>
+	
+	</body>
+</html>
