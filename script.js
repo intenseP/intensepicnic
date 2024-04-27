@@ -40,7 +40,7 @@ function searchGamePredetermined(){
 
 function search(preSearch){
     // Declare variables
-    var input, filter, ul, li, a, i, searchesFound;
+    var input, filter, ul, unfilteredli, a, i, searchesFound;
 	searchesFound = 0;
 
 	if (preSearch == ''){
@@ -53,11 +53,22 @@ function search(preSearch){
 	}
    
     ul = document.getElementById("searchable");
-    li = ul.getElementsByTagName("li");
+    unfilteredli = ul.getElementsByTagName("li");
+	
+	const li = [];
+	
+	for (i = 0; i < unfilteredli.length; i++) {
+		if (unfilteredli[i].getElementsByClassName("releaseSearchHeader")[0] != null){
+			li.push(unfilteredli[i]);
+			console.log(li);
+		}
+	}
+	
 
 
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
+		
 		a = li[i].getElementsByClassName("releaseSearchHeader")[0];
 		if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
 			li[i].style.display = "";

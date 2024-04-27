@@ -457,6 +457,8 @@ body::-webkit-scrollbar {
 
 .releaseContentNotes p{
 	font-family: Verdana;
+	text-align: left;
+	font-size: 13px;
 }
 
 .releaseContentFooter{

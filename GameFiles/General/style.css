@@ -118,15 +118,16 @@ body::-webkit-scrollbar {
 #unity-business{
  width: 100%;
 }
+
 #unity-container {}
 #unity-container.unity-desktop { width: 100%; }
 #unity-container.unity-mobile { width: 100%; height: 100% }
-#unity-canvas { background: #231F20;  border:solid;}
+#unity-canvas { background: #231F20;  border:solid; margin-left: 7%; margin-right: 7%;}
 .unity-mobile #unity-canvas { width: 100%; height: 100% }
 #unity-loading-bar { position: absolute; left: 50%; top: 68%; transform: translate(-50%, -50%); display: none }
 #unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('TemplateData/progress-bar-empty-dark.png') no-repeat center }
 #unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('TemplateData/progress-bar-full-dark.png') no-repeat center }
-#unity-footer { display: inline-block; background-color: #1A1A1A; width: 960px; text-align: center; align-content:center;border:solid; border-top-width: 0px;}
+#unity-footer { display: inline-block; background-color: #1A1A1A; width: 960px; text-align: center; align-content:center;border:solid; border-top-width: 0px; margin-left: 7%; margin-right: 7%;}
 .unity-mobile #unity-footer { display: none }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px; background-color: green;}
 #unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('TemplateData/fullscreen-button.png') no-repeat center }
